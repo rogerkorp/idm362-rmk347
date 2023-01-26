@@ -16,43 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jK-Dy-cBr">
-                                <rect key="frame" x="169" y="59" width="55" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jK-Dy-cBr">
+                                <rect key="frame" x="40" y="59" width="194" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1N9-iR-nxd">
-                                <rect key="frame" x="40" y="139" width="100" height="35"/>
+                                <rect key="frame" x="16" y="139" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="671-FH-A3B"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Left"/>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="31j-Xy-l1r">
+                                <rect key="frame" x="18" y="209" width="357" height="31"/>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-BR-CUo">
-                                <rect key="frame" x="253" y="139" width="100" height="35"/>
+                                <rect key="frame" x="277" y="139" width="100" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="EKW-4e-Q6A"/>
+                                    <constraint firstAttribute="width" constant="100" id="R9t-CR-aNv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Right"/>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="31j-Xy-l1r">
-                                <rect key="frame" x="18" y="209" width="357" height="31"/>
-                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dgl-BR-CUo" secondAttribute="trailing" constant="40" id="Esy-fa-2eQ"/>
-                            <constraint firstItem="Dgl-BR-CUo" firstAttribute="top" secondItem="7jK-Dy-cBr" secondAttribute="bottom" constant="20" id="Im8-bf-bGb"/>
-                            <constraint firstItem="1N9-iR-nxd" firstAttribute="top" secondItem="7jK-Dy-cBr" secondAttribute="bottom" constant="20" id="UJt-K2-lNf"/>
-                            <constraint firstItem="1N9-iR-nxd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="V48-vc-lJR"/>
+                            <constraint firstItem="31j-Xy-l1r" firstAttribute="top" secondItem="7jK-Dy-cBr" secondAttribute="bottom" constant="90" id="7NL-qE-Jr0"/>
+                            <constraint firstItem="1N9-iR-nxd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="V48-vc-lJR"/>
+                            <constraint firstItem="7jK-Dy-cBr" firstAttribute="centerX" secondItem="31j-Xy-l1r" secondAttribute="centerX" constant="-59.5" id="WuX-uk-G49"/>
                             <constraint firstItem="31j-Xy-l1r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="X5c-En-wr8"/>
                             <constraint firstItem="31j-Xy-l1r" firstAttribute="top" secondItem="1N9-iR-nxd" secondAttribute="bottom" constant="35" id="aVR-WX-kEn"/>
-                            <constraint firstItem="7jK-Dy-cBr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dCo-BJ-Pbc"/>
-                            <constraint firstItem="7jK-Dy-cBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qTI-ic-Cc0"/>
+                            <constraint firstItem="Dgl-BR-CUo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="czo-KF-MYU"/>
+                            <constraint firstItem="Dgl-BR-CUo" firstAttribute="baseline" secondItem="1N9-iR-nxd" secondAttribute="baseline" id="kMg-DH-ml7"/>
+                            <constraint firstItem="7jK-Dy-cBr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="obT-06-2cQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="31j-Xy-l1r" secondAttribute="trailing" constant="20" id="qtf-mZ-aEW"/>
                         </constraints>
                     </view>
