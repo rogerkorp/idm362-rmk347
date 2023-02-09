@@ -135,29 +135,28 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-1v-asf">
                                 <rect key="frame" x="60" y="81" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Xmr-IB-y55"/>
+                                    <constraint firstAttribute="width" secondItem="LtO-1v-asf" secondAttribute="height" multiplier="100:100" id="IT4-VX-hQr"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Choice 1"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-a5-pb2">
                                 <rect key="frame" x="60" y="289" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="W4m-OX-c1u"/>
-                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Choice 2"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXj-Pq-9Bx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qNQ-a5-pb2" firstAttribute="height" secondItem="LtO-1v-asf" secondAttribute="height" id="Grs-iP-W1K"/>
                             <constraint firstItem="qNQ-a5-pb2" firstAttribute="top" secondItem="LtO-1v-asf" secondAttribute="bottom" constant="8" id="Jg0-SY-p4R"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="LtO-1v-asf" secondAttribute="trailing" constant="60" id="Ls1-Op-PHg"/>
                             <constraint firstItem="LtO-1v-asf" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="60" id="MOr-0R-VfW"/>
                             <constraint firstItem="0Pm-IW-EdB" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="57" id="U6O-kk-wF9"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="qNQ-a5-pb2" secondAttribute="trailing" constant="60" id="Zy3-J8-zO8"/>
                             <constraint firstItem="LtO-1v-asf" firstAttribute="top" secondItem="0Pm-IW-EdB" secondAttribute="bottom" constant="18" id="dsf-9M-fxu"/>
+                            <constraint firstItem="qNQ-a5-pb2" firstAttribute="width" secondItem="LtO-1v-asf" secondAttribute="width" id="ijh-R2-c7a"/>
                             <constraint firstItem="dWm-cY-XP4" firstAttribute="top" secondItem="nXj-Pq-9Bx" secondAttribute="top" constant="20" id="isE-fS-aHU"/>
                             <constraint firstItem="dWm-cY-XP4" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="41" id="oat-1y-BpF"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="0Pm-IW-EdB" secondAttribute="trailing" constant="57" id="tUZ-FU-Nj3"/>
