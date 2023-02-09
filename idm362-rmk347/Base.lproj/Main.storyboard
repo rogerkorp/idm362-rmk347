@@ -121,15 +121,57 @@
                     <view key="view" contentMode="scaleToFill" id="suL-Gp-AEC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Votes Needed (est. 3m)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-cY-XP4">
+                                <rect key="frame" x="41" y="20" width="239" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-IW-EdB">
+                                <rect key="frame" x="57" y="59" width="206" height="4"/>
+                                <color key="tintColor" red="1" green="0.85417371020283517" blue="0.53979043106759483" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-1v-asf">
+                                <rect key="frame" x="60" y="81" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Xmr-IB-y55"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNQ-a5-pb2">
+                                <rect key="frame" x="60" y="289" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="W4m-OX-c1u"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nXj-Pq-9Bx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qNQ-a5-pb2" firstAttribute="top" secondItem="LtO-1v-asf" secondAttribute="bottom" constant="8" id="Jg0-SY-p4R"/>
+                            <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="LtO-1v-asf" secondAttribute="trailing" constant="60" id="Ls1-Op-PHg"/>
+                            <constraint firstItem="LtO-1v-asf" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="60" id="MOr-0R-VfW"/>
+                            <constraint firstItem="0Pm-IW-EdB" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="57" id="U6O-kk-wF9"/>
+                            <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="qNQ-a5-pb2" secondAttribute="trailing" constant="60" id="Zy3-J8-zO8"/>
+                            <constraint firstItem="LtO-1v-asf" firstAttribute="top" secondItem="0Pm-IW-EdB" secondAttribute="bottom" constant="18" id="dsf-9M-fxu"/>
+                            <constraint firstItem="dWm-cY-XP4" firstAttribute="top" secondItem="nXj-Pq-9Bx" secondAttribute="top" constant="20" id="isE-fS-aHU"/>
+                            <constraint firstItem="dWm-cY-XP4" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="41" id="oat-1y-BpF"/>
+                            <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="0Pm-IW-EdB" secondAttribute="trailing" constant="57" id="tUZ-FU-Nj3"/>
+                            <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="dWm-cY-XP4" secondAttribute="trailing" constant="40" id="tdi-e1-hWE"/>
+                            <constraint firstItem="qNQ-a5-pb2" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="60" id="vDl-Zd-zi2"/>
+                            <constraint firstItem="0Pm-IW-EdB" firstAttribute="top" secondItem="dWm-cY-XP4" secondAttribute="bottom" constant="15" id="ynD-SF-q6z"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="fh7-A3-3vE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsf-oO-zEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425" y="821"/>
+            <point key="canvasLocation" x="1425" y="820.77464788732391"/>
         </scene>
         <!--Hone-->
         <scene sceneID="dkF-Ol-rHV">
