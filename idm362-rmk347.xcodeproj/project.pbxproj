@@ -289,7 +289,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "idm362-rmk347/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Ranking Tool";
+				INFOPLIST_KEY_CFBundleDisplayName = Decide;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,7 +316,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "idm362-rmk347/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Ranking Tool";
+				INFOPLIST_KEY_CFBundleDisplayName = Decide;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
