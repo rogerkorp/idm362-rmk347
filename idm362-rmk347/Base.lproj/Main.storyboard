@@ -16,51 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYS-KY-EoX">
-                                <rect key="frame" x="16" y="392" width="288" height="107"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="41H-QG-6rW"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Restart">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In 1st place..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ri-hV-UAz">
-                                <rect key="frame" x="111" y="37" width="99" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YAF-fv-wSE">
-                                <rect key="frame" x="16" y="161" width="288" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chocolate" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I53-w2-hHw">
-                                <rect key="frame" x="16" y="51" width="288" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="oos-wR-mjl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <color key="textColor" name="Blues"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="I53-w2-hHw" firstAttribute="trailing" secondItem="mYS-KY-EoX" secondAttribute="trailing" id="CuG-7i-RJR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mYS-KY-EoX" secondAttribute="bottom" constant="20" id="HgY-fm-nSS"/>
-                            <constraint firstItem="7ri-hV-UAz" firstAttribute="centerX" secondItem="I53-w2-hHw" secondAttribute="centerX" id="Kvu-j1-LZV"/>
-                            <constraint firstItem="7ri-hV-UAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="37" id="MtM-IO-vOE"/>
-                            <constraint firstItem="I53-w2-hHw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Njy-Uc-Twl"/>
-                            <constraint firstItem="I53-w2-hHw" firstAttribute="leading" secondItem="mYS-KY-EoX" secondAttribute="leading" id="Otl-Dv-MEl"/>
-                            <constraint firstItem="7ri-hV-UAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="Q4T-HL-Bg1"/>
-                            <constraint firstItem="I53-w2-hHw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="51" id="sjX-yL-J7J"/>
-                            <constraint firstItem="I53-w2-hHw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xrx-hj-57Y"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="star.fill" catalog="system" id="kXK-FV-Srg"/>
                 </viewController>
@@ -159,7 +116,7 @@
         <!--Home-->
         <scene sceneID="dkF-Ol-rHV">
             <objects>
-                <viewController id="Occ-Vv-agM" sceneMemberID="viewController">
+                <viewController id="Occ-Vv-agM" customClass="ViewControllerHome" customModule="idm362_rmk347" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojD-a0-Zqd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +150,7 @@
                                 <rect key="frame" x="16" y="328" width="288" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new item..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyM-3A-Dch">
-                                        <rect key="frame" x="0.0" y="0.0" width="248.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YyM-3A-Dch" secondAttribute="height" multiplier="32:4" id="di3-PC-TIp"/>
                                             <constraint firstAttribute="height" constant="35" id="wAg-fo-2bv"/>
@@ -202,7 +159,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbN-ay-t6h">
-                                        <rect key="frame" x="253.5" y="0.0" width="34.5" height="50"/>
+                                        <rect key="frame" x="238" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tbN-ay-t6h" secondAttribute="height" multiplier="1:1" id="LFc-0D-MQF"/>
                                         </constraints>
@@ -211,6 +168,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <color key="baseBackgroundColor" name="Blues"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="AddListItem:" destination="Occ-Vv-agM" eventType="touchUpInside" id="Qqw-iz-BcB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -246,6 +206,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="zQf-dg-XJk"/>
+                    <connections>
+                        <outlet property="ListItemTextInput" destination="YyM-3A-Dch" id="8dR-If-xO1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGE-c4-WBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

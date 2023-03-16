@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB30B0B529C2B5F400CC75A0 /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30B0B429C2B5F400CC75A0 /* ViewControllerHome.swift */; };
 		CBEA51342979914C0024C769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51332979914C0024C769 /* AppDelegate.swift */; };
 		CBEA51362979914C0024C769 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51352979914C0024C769 /* SceneDelegate.swift */; };
 		CBEA51382979914C0024C769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51372979914C0024C769 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB30B0B429C2B5F400CC75A0 /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
 		CBEA51302979914C0024C769 /* idm362-rmk347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idm362-rmk347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA51332979914C0024C769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBEA51352979914C0024C769 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				CBEA51352979914C0024C769 /* SceneDelegate.swift */,
 				CBEA51372979914C0024C769 /* ViewController.swift */,
 				CBEA51392979914C0024C769 /* Main.storyboard */,
+				CB30B0B429C2B5F400CC75A0 /* ViewControllerHome.swift */,
 				CBEA513C2979914E0024C769 /* Assets.xcassets */,
 				CBEA513E2979914E0024C769 /* LaunchScreen.storyboard */,
 				CBEA51412979914E0024C769 /* Info.plist */,
@@ -141,6 +144,7 @@
 				CBEA51382979914C0024C769 /* ViewController.swift in Sources */,
 				CBEA51342979914C0024C769 /* AppDelegate.swift in Sources */,
 				CBEA51362979914C0024C769 /* SceneDelegate.swift in Sources */,
+				CB30B0B529C2B5F400CC75A0 /* ViewControllerHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
