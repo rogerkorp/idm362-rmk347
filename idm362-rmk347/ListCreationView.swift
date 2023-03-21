@@ -9,7 +9,7 @@ import UIKit
 
 class ListCreationView: UITableViewController {
     
-    var listItems: [String] = ["Vanilla", "Chocolate", "Strawberry", "Neapolitan"]
+    var listItems: [String] = ["Vanilla", "Chocolate", "Strawberry", "Neapolitan"] //String containing all of the custom list items
 
     
     override func viewDidLoad() {
@@ -53,17 +53,23 @@ class ListCreationView: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
+    
+    //Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            // Delete from array
+            listItems.remove(at: indexPath.row) //always indexPath
+            //Reload table
+            self.tableView.reloadData()
+        }
+        
+        /* //Enable to add editing
+        else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+         */
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -80,6 +86,34 @@ class ListCreationView: UITableViewController {
     }
     */
 
+    
+    @IBAction func addListItem(_ sender: Any) { //Creates alert to get list item from user.
+        let alertObj = UIAlertController(title: "New List Item", message: "Add New List Item", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default){
+            [unowned self] action in
+            guard let textField = alertObj.textFields?.first,
+                  let itemToSave = textField.text else{
+                return
+            }
+            //This line updates the array! - Rogie
+            self.listItems.append(itemToSave) //You will need to use self to reference items in itself.
+            //Reloads the table.
+            self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertObj.addAction(cancelAction)
+        alertObj.addTextField()
+        alertObj.addAction(saveAction)
+        
+        present(alertObj, animated: true)
+        
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
