@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsf-oO-zEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="772"/>
+            <point key="canvasLocation" x="3519" y="-33"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ROG-Bv-cS3">
@@ -164,10 +164,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="Jbi-6U-wGD">
                             <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="startVote:" destination="EUV-dS-1uR" id="LnL-H4-0v8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="cJt-30-Vo3" kind="show" id="52m-aD-Vz3"/>
+                        <segue destination="cJt-30-Vo3" kind="show" identifier="startVote" id="52m-aD-Vz3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0E1-gh-9XL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,12 +11,13 @@ class VotingViewController: UIViewController {
     
     //List Variable
     
-    
+    var votingListItems: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(votingListItems)
     }
     
 
