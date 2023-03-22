@@ -9,11 +9,20 @@ import UIKit
 
 class ListCreationView: UITableViewController {
     
+    let cellSpacingHeight: CGFloat = 5
+    let backgroundColor = UIColor(named: "Background")
+    
     var listItems: [String] = ["Vanilla", "Chocolate", "Strawberry", "Neapolitan"] //String containing all of the custom list items
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = backgroundColor
+        tableView.separatorColor = backgroundColor
+        
+        tableView.layoutMargins = .init(top: 0.0, left: 23.5, bottom: 0.0, right: 23.5)
+            // if you want the separator lines to follow the content width
+            tableView.separatorInset = tableView.layoutMargins
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,13 +40,18 @@ class ListCreationView: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return listItems.count
     }
+    
+
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = listItems[indexPath.row]
+        cell.textLabel?.textColor = UIColor.tintColor
+        cell.textLabel?.layer.cornerRadius = 8
 
         // Configure the cell...
 

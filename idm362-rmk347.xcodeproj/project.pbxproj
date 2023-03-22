@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB30B0B529C2B5F400CC75A0 /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30B0B429C2B5F400CC75A0 /* ViewControllerHome.swift */; };
 		CB64A44429C36E8700215B4C /* ListCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A44329C36E8700215B4C /* ListCreationView.swift */; };
+		CB64A44629CB82BF00215B4C /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A44529CB82BF00215B4C /* VotingViewController.swift */; };
 		CBEA51342979914C0024C769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51332979914C0024C769 /* AppDelegate.swift */; };
 		CBEA51362979914C0024C769 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51352979914C0024C769 /* SceneDelegate.swift */; };
 		CBEA51382979914C0024C769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51372979914C0024C769 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		CB30B0B429C2B5F400CC75A0 /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
 		CB64A44329C36E8700215B4C /* ListCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCreationView.swift; sourceTree = "<group>"; };
+		CB64A44529CB82BF00215B4C /* VotingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VotingViewController.swift; path = "idm362-rmk347/VotingViewController.swift"; sourceTree = "<group>"; };
 		CBEA51302979914C0024C769 /* idm362-rmk347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idm362-rmk347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA51332979914C0024C769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBEA51352979914C0024C769 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		CBEA51272979914C0024C769 = {
 			isa = PBXGroup;
 			children = (
+				CB64A44529CB82BF00215B4C /* VotingViewController.swift */,
 				CBEA51322979914C0024C769 /* idm362-rmk347 */,
 				CBEA51312979914C0024C769 /* Products */,
 			);
@@ -149,6 +152,7 @@
 				CB64A44429C36E8700215B4C /* ListCreationView.swift in Sources */,
 				CBEA51362979914C0024C769 /* SceneDelegate.swift in Sources */,
 				CB30B0B529C2B5F400CC75A0 /* ViewControllerHome.swift in Sources */,
+				CB64A44629CB82BF00215B4C /* VotingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
