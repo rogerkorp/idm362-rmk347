@@ -13,8 +13,10 @@ class VotingViewController: UIViewController {
     
     var votingListItems: [String] = [] //List passed from the creation screen
     
-    var votingMatrix: [[Int]] = [] //Keeps track of how many votes each pair has recieved
+    var votingMatrix: [[Double]] = [] //Keeps track of how many votes each pair has recieved
     var listItemELO: [String] = []//Keeps track of the ELO Rank of each list item
+    
+    var votesNeeded: Int?
 
     var chooseColumn = 0
     var chooseRow = 0
@@ -22,7 +24,8 @@ class VotingViewController: UIViewController {
     var lastRowDrawn: Int?
     var lastColumnDrawn: Int?
     
-    var voteTotal = 0
+    var voteTotal: Double = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +38,9 @@ class VotingViewController: UIViewController {
         //This one creates a matrix equal to the length of votingListItems squared. Each value in the array is set to "0" to denote there being no votes logged.
         votingMatrix = Array(repeating: Array(repeating: 0, count: votingListItems.count), count: votingListItems.count)
         
-        var idealAverage = 1 / (((votingListItems.count) * (votingListItems.count)) - (votingListItems.count)) //This is used to determine the ideal frequency a pair should be voted on – as expressed as a percentage.
-        
         //This one creates an array keeping track of the ELO for each list item.
         let listItemELO = Array(repeating: 1000, count: votingListItems.count)
         
-        
-        
-        print(votingMatrix)
         drawRound()
     }
     
@@ -63,16 +61,24 @@ class VotingViewController: UIViewController {
     }
     
     func drawRound(){ //This function creates a pair up between two items.
+        votesNeeded = ((votingListItems.count * votingListItems.count) - votingListItems.count)
+
+        var idealAverage = 1 / Double(votesNeeded ?? 1) //This is used to determine the ideal frequency a pair should be voted on – as expressed as a percentage.
        
         repeat{
-            chooseRow = Int.random(in: 0...(votingListItems.count - 1)) //First it draws the row
-        } while (chooseRow == lastRowDrawn)
-            
-        repeat { //Then it will draw the column. Note how it always redraws if the column is the same as the row. This will prevent the system from choosing pair-ups between the same two objects.
-        chooseColumn = Int.random(in: 0...(votingListItems.count - 1))
-        } while ((chooseColumn == lastColumnDrawn) || (chooseColumn == chooseRow))
+            repeat{
+                chooseRow = Int.random(in: 0...(votingListItems.count - 1)) //First it draws the row
+            } while (chooseRow == lastRowDrawn)
         
+            repeat { //Then it will draw the column. Note how it always redraws if the column is the same as the row. This will prevent the system from choosing pair-ups between the same two objects.
+                chooseColumn = Int.random(in: 0...(votingListItems.count - 1))
+            } while ((chooseColumn == lastColumnDrawn) || (chooseColumn == chooseRow))
+            
+        } while ((votingMatrix[chooseColumn][chooseRow])/(voteTotal*2) > idealAverage)
+                    
+                    
         print("Total Votes Logged: ", voteTotal)
+        print("Ideal Average: ", idealAverage)
         print("Voting Matrix")
         print(votingMatrix)
         
@@ -90,7 +96,7 @@ class VotingViewController: UIViewController {
         print(rejected)
         votingMatrix[chosen][rejected] += 1
         votingMatrix[rejected][chosen] += 1
-        voteTotal += 2
+        voteTotal += 1
     }
     
     
