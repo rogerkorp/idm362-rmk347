@@ -47,21 +47,23 @@ class VotingViewController: UIViewController {
     @IBOutlet weak var RightButtonUI: UIButton!    
     
     @IBAction func LeftButton(_ sender: Any) {
+        drawRound()
     }
     
     
     @IBAction func RightButton(_ sender: Any) {
+        drawRound()
     }
     
     func drawRound(){ //This function creates a pair up between two items.
         
-        let chooseRow = Int.random(in: 0...votingListItems.count) //First it draws the row
+        chooseRow = Int.random(in: 0...(votingListItems.count - 1)) //First it draws the row
         
         repeat { //Then it will draw the column. Note how it always redraws if the column is the same as the row. This will prevent the system from choosing pair-ups between the same two objects.
-        let chooseColumn = Int.random(in: 0...votingListItems.count)
+        chooseColumn = Int.random(in: 0...(votingListItems.count - 1))
         } while (chooseColumn == chooseRow)
         
-        print(votingListItems[chooseColumn], votingListItems[chooseRow])
+        print(chooseRow)
         
         LeftButtonUI.setTitle(String(votingListItems[chooseColumn]), for: .normal)
         RightButtonUI.setTitle(String(votingListItems[chooseRow]), for: .normal)
