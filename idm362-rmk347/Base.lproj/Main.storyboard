@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XNq-pN-Zwg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fgt-YG-tEm">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,23 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Results-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="idm362_rmk347" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="Background"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Results" image="star.fill" catalog="system" id="kXK-FV-Srg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="467" y="1177"/>
-        </scene>
-        <!--Voting-->
+        <!--Voting View Controller-->
         <scene sceneID="5FR-wD-q2C">
             <objects>
                 <viewController id="cJt-30-Vo3" customClass="VotingViewController" customModule="idm362_rmk347" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +82,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXj-Pq-9Bx"/>
                         <color key="backgroundColor" name="Background"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="OKj-yi-9Ga" firstAttribute="trailing" secondItem="XVS-Tg-GEy" secondAttribute="trailing" id="2pe-MZ-gV3"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="bottom" secondItem="UYp-3r-SJm" secondAttribute="bottom" constant="18.5" id="5c8-TO-ClN"/>
@@ -111,7 +96,6 @@
                             <constraint firstItem="UYp-3r-SJm" firstAttribute="top" secondItem="OKj-yi-9Ga" secondAttribute="bottom" constant="60" id="xum-7X-HI1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Voting" image="trophy.fill" catalog="system" id="fh7-A3-3vE"/>
                     <navigationItem key="navigationItem" id="Gas-L3-2dG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -120,29 +104,67 @@
                         <outlet property="VotePercentageLabel" destination="uuz-fw-b0Q" id="HLU-RX-tzj"/>
                         <outlet property="VotesNeededLabel" destination="u7N-O7-Sp9" id="LrC-zo-S9U"/>
                         <outlet property="VotingProgressBar" destination="nDn-pO-thW" id="xWE-qB-Keq"/>
+                        <segue destination="CeY-Sc-5Uc" kind="presentation" identifier="showResults" modalPresentationStyle="fullScreen" id="FWB-Qq-GCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsf-oO-zEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3519" y="-33"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ROG-Bv-cS3">
+        <!--Results-->
+        <scene sceneID="FO4-Yq-PP9">
             <objects>
-                <tabBarController id="XNq-pN-Zwg" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i16-jd-Vut">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Zbp-MQ-v9L"/>
-                        <segue destination="fgt-YG-tEm" kind="relationship" relationship="viewControllers" id="key-0b-38a"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="upH-wV-mK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="XHN-23-fSZ" customClass="ResultsView" customModule="idm362_rmk347" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oKT-xh-VXS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" id="V9G-jN-j0g">
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9G-jN-j0g" id="o5l-je-7pb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XHN-23-fSZ" id="lAM-K1-niw"/>
+                            <outlet property="delegate" destination="XHN-23-fSZ" id="hlO-qb-2GE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Results" id="dxB-VE-Gu4">
+                        <barButtonItem key="rightBarButtonItem" title="Restart" id="bih-As-3Zr">
+                            <connections>
+                                <action selector="restartProcess:" destination="XHN-23-fSZ" id="V6z-wk-Ga1"/>
+                                <segue destination="tEF-cA-aEg" kind="unwind" unwindAction="returnToStartWithSegue:" id="fbb-1p-Sso"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JiF-vy-rcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tEF-cA-aEg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-32"/>
+            <point key="canvasLocation" x="5248" y="-34"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ekb-kT-WeB">
+            <objects>
+                <navigationController id="CeY-Sc-5Uc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Nre-sr-hj5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sSD-Xi-VwL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XHN-23-fSZ" kind="relationship" relationship="rootViewController" id="B5k-NJ-R0M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWd-aH-40j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4384" y="-35"/>
         </scene>
         <!--Create List-->
         <scene sceneID="DFt-LO-B5E">
@@ -152,6 +174,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Background"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="LQ3-k5-mxJ">
                                 <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
@@ -210,8 +233,6 @@
     </scenes>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="trophy.fill" catalog="system" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.36100000143051147" green="0.44299998879432678" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

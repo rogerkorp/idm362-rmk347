@@ -139,6 +139,8 @@ class ListCreationView: UITableViewController {
         
     }
     
+    @IBAction func returnToStart(segue: UIStoryboardSegue) {
+    }
     
     
     // MARK: - Navigation

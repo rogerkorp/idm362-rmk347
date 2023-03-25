@@ -76,6 +76,7 @@ class VotingViewController: UIViewController {
         votesRemaining -= 1
         VotesNeededLabel.text = String(votesRemaining) + " Votes Needed"
         VotePercentageLabel.text = String(round(voteProgress * 1000) / 10) + "% Complete"
+        showResults()
     }
     
     
@@ -86,6 +87,7 @@ class VotingViewController: UIViewController {
         votesRemaining -= 1
         VotesNeededLabel.text = String(votesRemaining) + " Votes Needed"
         VotePercentageLabel.text = String(round(voteProgress * 1000) / 10) + "% Complete"
+        showResults()
     }
     
     func drawRound(){ //This function creates a pair up between two items.
@@ -166,6 +168,14 @@ class VotingViewController: UIViewController {
         
     }
     
+    //Trigger Results
+    
+    func showResults(){
+        if (voteProgress >= 1.0){
+            performSegue(withIdentifier: "showResults", sender: nil)
+        }
+    }
+    
     //Progress Bar
     
     @IBOutlet weak var VotingProgressBar: UIProgressView!
@@ -176,14 +186,20 @@ class VotingViewController: UIViewController {
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showResults" {
+            let nav = segue.destination as! UINavigationController
+            let resultsObj = nav.topViewController as! ResultsView
+            resultsObj.list = votingListItems
+            resultsObj.elo = listItemELO
+        }
     }
-    */
+    
 
 }
