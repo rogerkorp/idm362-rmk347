@@ -14,9 +14,9 @@ class VotingViewController: UIViewController {
     var votingListItems: [String] = [] //List passed from the creation screen
     
     var votingMatrix: [[Double]] = [] //Keeps track of how many votes each pair has recieved
-    var listItemELO: [String] = []//Keeps track of the ELO Rank of each list item
+    var listItemELO: [Double] = []//Keeps track of the ELO Rank of each list item
     
-    var votesNeeded: Int?
+    var votesNeeded: Int = 0
 
     var chooseColumn = 0
     var chooseRow = 0
@@ -25,6 +25,22 @@ class VotingViewController: UIViewController {
     var lastColumnDrawn: Int?
     
     var voteTotal: Double = 0
+    var voteProgress: Float = 0.0
+    var votesRemaining: Int = 0
+    
+    var choiceA_Rating: Double = 0.0
+    var choiceB_Rating: Double = 0.0
+    
+    //STEP 2: Find out how many rounds each list item was involved in
+    var choiceA_TotalVotes: Double = 0.0
+    var choiceB_TotalVotes: Double = 0.0
+    
+    //STEP 3: Get the expected score for each choice
+    
+    var difference_A_minus_B: Double  = 0.0
+    var difference_B_minus_A: Double = 0.0
+    var choiceA_ExpectedScore: Double = 0.0
+    var choiceB_ExpectedScore: Double = 0.0
     
 
     override func viewDidLoad() {
@@ -39,9 +55,13 @@ class VotingViewController: UIViewController {
         votingMatrix = Array(repeating: Array(repeating: 0, count: votingListItems.count), count: votingListItems.count)
         
         //This one creates an array keeping track of the ELO for each list item.
-        let listItemELO = Array(repeating: 1000, count: votingListItems.count)
+        listItemELO = Array(repeating: 1000, count: votingListItems.count)
         
         drawRound()
+        
+        votesRemaining = votesNeeded / 2
+        VotesNeededLabel.text = String(votesRemaining) + " Votes Needed"
+        VotePercentageLabel.text = String(round(voteProgress * 1000) / 10) + "% Complete"
     }
     
     
@@ -52,18 +72,27 @@ class VotingViewController: UIViewController {
     @IBAction func LeftButton(_ sender: Any) {
         assignPoints(chosen: chooseColumn, rejected: chooseRow) //Assigns points in ELO and Voting Matrix
         drawRound() //Draws a new round
+        VotingProgressBar.setProgress(voteProgress, animated: true)
+        votesRemaining -= 1
+        VotesNeededLabel.text = String(votesRemaining) + " Votes Needed"
+        VotePercentageLabel.text = String(round(voteProgress * 1000) / 10) + "% Complete"
     }
     
     
     @IBAction func RightButton(_ sender: Any) {
         assignPoints(chosen: chooseRow, rejected: chooseColumn) //Assigns points in ELO and Voting Matrix
         drawRound() //Draws a new round
+        VotingProgressBar.setProgress(voteProgress, animated: true)
+        votesRemaining -= 1
+        VotesNeededLabel.text = String(votesRemaining) + " Votes Needed"
+        VotePercentageLabel.text = String(round(voteProgress * 1000) / 10) + "% Complete"
     }
     
     func drawRound(){ //This function creates a pair up between two items.
         votesNeeded = ((votingListItems.count * votingListItems.count) - votingListItems.count)
+        voteProgress = Float(Double(voteTotal) / (Double(votesNeeded ) / 2))
 
-        var idealAverage = 1 / Double(votesNeeded ?? 1) //This is used to determine the ideal frequency a pair should be voted on – as expressed as a percentage.
+        let idealAverage = 1 / Double(votesNeeded ) //This is used to determine the ideal frequency a pair should be voted on – as expressed as a percentage.
        
         repeat{
             repeat{
@@ -79,29 +108,74 @@ class VotingViewController: UIViewController {
                     
         print("Total Votes Logged: ", voteTotal)
         print("Ideal Average: ", idealAverage)
-        print("Voting Matrix")
+        print("Voting Matrix:")
         print(votingMatrix)
         
         //Sets the last row drawn to new variables
         lastRowDrawn = chooseRow
         lastColumnDrawn = chooseColumn
         
+        // ELO CALCULATIONS
+
+        //STEP 1: Find the current ELO rating of each list item
+        choiceA_Rating = listItemELO[chooseRow]
+        choiceB_Rating = listItemELO[chooseColumn]
+        
+        //STEP 2: Find out how many rounds each list item was involved in
+        choiceA_TotalVotes = votingMatrix[chooseRow].reduce(0, +)
+        choiceB_TotalVotes = votingMatrix[chooseColumn].reduce(0, +)
+        
+        //STEP 3: Get the expected score for each choice
+        
+        difference_A_minus_B = choiceA_Rating - choiceB_Rating
+        difference_B_minus_A = choiceB_Rating - choiceA_Rating
+        choiceA_ExpectedScore = 1 / (1 + pow(10, difference_B_minus_A / 1000))
+        choiceB_ExpectedScore = 1 / (1 + pow(10, difference_A_minus_B / 1000))
+        
         LeftButtonUI.setTitle(String(votingListItems[chooseColumn]), for: .normal) //Changes the label for the left button
         RightButtonUI.setTitle(String(votingListItems[chooseRow]), for: .normal) //Changes the label for the right button
 
     }
     
+    
+    
     func assignPoints(chosen: Int, rejected: Int){
-        print(chosen)
-        print(rejected)
         votingMatrix[chosen][rejected] += 1
         votingMatrix[rejected][chosen] += 1
         voteTotal += 1
+        
+        //Alright, now for the hard part. Time to run the ELO!
+        
+        if (listItemELO[chooseRow] == listItemELO[chosen]){
+            listItemELO[chosen] = choiceA_Rating + 100 * (1 - choiceA_ExpectedScore)
+            listItemELO[rejected] = choiceB_Rating + 100 * (0 - choiceB_ExpectedScore)
+            if (listItemELO[rejected] <= 0.0){
+                listItemELO[rejected] = 1
+            }
+        }
+        
+        if (listItemELO[chooseColumn] == listItemELO[chosen]){
+            listItemELO[chosen] = choiceB_Rating + 100 * (1 - choiceB_ExpectedScore)
+            listItemELO[rejected] = choiceA_Rating + 100 * (0 - choiceA_ExpectedScore)
+            if (listItemELO[rejected] <= 0.0){
+                listItemELO[rejected] = 1
+            }
+        }
+        
+        print(listItemELO)
+        
     }
     
+    //Progress Bar
+    
+    @IBOutlet weak var VotingProgressBar: UIProgressView!
+    
+    @IBOutlet weak var VotesNeededLabel: UILabel!
+    
+    @IBOutlet weak var VotePercentageLabel: UILabel!
     
     
-
+    
     /*
     // MARK: - Navigation
 

@@ -35,7 +35,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XVS-Tg-GEy">
                                 <rect key="frame" x="16" y="75" width="288" height="33"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-pO-thW">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-pO-thW">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="3.5"/>
                                         <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                     </progressView>
@@ -89,7 +89,7 @@
                                     <constraint firstAttribute="width" secondItem="UYp-3r-SJm" secondAttribute="height" multiplier="26:17" id="fLr-RO-87g"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which ice cream flavor tastes better?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKj-yi-9Ga">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your preference" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKj-yi-9Ga">
                                 <rect key="frame" x="16" y="168" width="288" height="84"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="Blues"/>
@@ -117,6 +117,9 @@
                     <connections>
                         <outlet property="LeftButtonUI" destination="62Z-qQ-ElT" id="eha-Gl-QeT"/>
                         <outlet property="RightButtonUI" destination="wVy-mt-hw1" id="CXi-cs-v36"/>
+                        <outlet property="VotePercentageLabel" destination="uuz-fw-b0Q" id="HLU-RX-tzj"/>
+                        <outlet property="VotesNeededLabel" destination="u7N-O7-Sp9" id="LrC-zo-S9U"/>
+                        <outlet property="VotingProgressBar" destination="nDn-pO-thW" id="xWE-qB-Keq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsf-oO-zEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

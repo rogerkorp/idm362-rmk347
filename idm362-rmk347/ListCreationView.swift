@@ -127,7 +127,15 @@ class ListCreationView: UITableViewController {
     
     
     @IBAction func startVote(_ sender: Any) {
-        performSegue(withIdentifier: "startVote", sender: nil)
+        let alertObj = UIAlertController(title: "Need More Items", message: "You need at least three list items before you can start the vote.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Okay", style: .cancel)
+        
+        if (listItems.count >= 3){
+            performSegue(withIdentifier: "startVote", sender: nil)
+        } else {
+            alertObj.addAction(cancelAction)
+            present(alertObj, animated: true)
+        }
         
     }
     
