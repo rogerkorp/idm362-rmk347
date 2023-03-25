@@ -74,26 +74,35 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your preference" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKj-yi-9Ga">
-                                <rect key="frame" x="16" y="168" width="288" height="84"/>
+                                <rect key="frame" x="16" y="196" width="288" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OKj-yi-9Ga" secondAttribute="height" multiplier="24:7" id="sH1-rb-JIp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="Blues"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scales" translatesAutoresizingMaskIntoConstraints="NO" id="UEn-p3-OE1">
+                                <rect key="frame" x="107" y="116" width="106" height="72"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXj-Pq-9Bx"/>
                         <color key="backgroundColor" name="Background"/>
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
-                            <constraint firstItem="OKj-yi-9Ga" firstAttribute="trailing" secondItem="XVS-Tg-GEy" secondAttribute="trailing" id="2pe-MZ-gV3"/>
+                            <constraint firstItem="UEn-p3-OE1" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="107" id="1Ap-JA-K5D"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="bottom" secondItem="UYp-3r-SJm" secondAttribute="bottom" constant="18.5" id="5c8-TO-ClN"/>
+                            <constraint firstItem="UEn-p3-OE1" firstAttribute="top" secondItem="XVS-Tg-GEy" secondAttribute="bottom" constant="8" id="BlX-jR-plo"/>
+                            <constraint firstItem="OKj-yi-9Ga" firstAttribute="top" secondItem="UEn-p3-OE1" secondAttribute="bottom" constant="8" id="EAo-9n-Ir7"/>
+                            <constraint firstItem="UYp-3r-SJm" firstAttribute="top" secondItem="OKj-yi-9Ga" secondAttribute="bottom" constant="32" id="FRm-iR-IFw"/>
                             <constraint firstItem="XVS-Tg-GEy" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="16" id="PCy-kn-76r"/>
                             <constraint firstItem="UYp-3r-SJm" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="16" id="PdA-hY-63g"/>
-                            <constraint firstItem="OKj-yi-9Ga" firstAttribute="leading" secondItem="XVS-Tg-GEy" secondAttribute="leading" id="Qf7-nT-cO6"/>
+                            <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="OKj-yi-9Ga" secondAttribute="trailing" constant="16" id="XLL-2a-knH"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="UYp-3r-SJm" secondAttribute="trailing" constant="16" id="gJP-MF-iS4"/>
-                            <constraint firstItem="OKj-yi-9Ga" firstAttribute="top" secondItem="XVS-Tg-GEy" secondAttribute="bottom" constant="60" id="lcA-2X-Xnh"/>
+                            <constraint firstItem="UEn-p3-OE1" firstAttribute="centerX" secondItem="XVS-Tg-GEy" secondAttribute="centerX" id="kbh-IZ-nO1"/>
+                            <constraint firstItem="OKj-yi-9Ga" firstAttribute="leading" secondItem="nXj-Pq-9Bx" secondAttribute="leading" constant="16" id="mCj-aB-vIq"/>
                             <constraint firstItem="nXj-Pq-9Bx" firstAttribute="trailing" secondItem="XVS-Tg-GEy" secondAttribute="trailing" constant="16" id="t3B-J5-bjK"/>
                             <constraint firstItem="XVS-Tg-GEy" firstAttribute="top" secondItem="nXj-Pq-9Bx" secondAttribute="top" constant="31" id="xG8-nu-KEn"/>
-                            <constraint firstItem="UYp-3r-SJm" firstAttribute="top" secondItem="OKj-yi-9Ga" secondAttribute="bottom" constant="60" id="xum-7X-HI1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gas-L3-2dG"/>
@@ -109,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsf-oO-zEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3519" y="-33"/>
+            <point key="canvasLocation" x="3517.5" y="-33.802816901408448"/>
         </scene>
         <!--Results-->
         <scene sceneID="FO4-Yq-PP9">
@@ -155,7 +164,7 @@
                 <navigationController id="CeY-Sc-5Uc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Nre-sr-hj5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sSD-Xi-VwL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -232,6 +241,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Scales" width="463" height="370.5"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.36100000143051147" green="0.44299998879432678" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
