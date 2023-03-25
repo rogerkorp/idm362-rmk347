@@ -7,6 +7,10 @@
 
 import UIKit
 
+import AVFoundation
+
+var myAudioPlayerObj = AVAudioPlayer()
+
 class VotingViewController: UIViewController {
     
     //List Variable
@@ -45,6 +49,20 @@ class VotingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let mySound = Bundle.main.path(forResource: "sounds/submit", ofType: "mp3")
+        
+        do {
+          myAudioPlayerObj = try
+          AVAudioPlayer(contentsOf: URL(fileURLWithPath: mySound!))
+          myAudioPlayerObj.prepareToPlay()
+          print("Sound file loaded and prepped!")
+        } catch {
+          print(error)
+        }
+        
+        
 
         // Do any additional setup after loading the view.
             /* print(votingListItems) */ //Uncomment to print out the list of items.
@@ -172,6 +190,13 @@ class VotingViewController: UIViewController {
     
     func showResults(){
         if (voteProgress >= 1.0){
+            
+            if (myAudioPlayerObj.isPlaying) {
+              myAudioPlayerObj.stop()
+            } else {
+              myAudioPlayerObj.play()
+            }
+            
             performSegue(withIdentifier: "showResults", sender: nil)
         }
     }

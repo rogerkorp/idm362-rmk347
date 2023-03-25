@@ -11,6 +11,7 @@
 		CB64A44429C36E8700215B4C /* ListCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A44329C36E8700215B4C /* ListCreationView.swift */; };
 		CB64A44629CB82BF00215B4C /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A44529CB82BF00215B4C /* VotingViewController.swift */; };
 		CB9A395A29CE83520093E738 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A395929CE83520093E738 /* ResultsView.swift */; };
+		CB9A395C29CEA7750093E738 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = CB9A395B29CEA7750093E738 /* sounds */; };
 		CBEA51342979914C0024C769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51332979914C0024C769 /* AppDelegate.swift */; };
 		CBEA51362979914C0024C769 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51352979914C0024C769 /* SceneDelegate.swift */; };
 		CBEA51382979914C0024C769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA51372979914C0024C769 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		CB64A44329C36E8700215B4C /* ListCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCreationView.swift; sourceTree = "<group>"; };
 		CB64A44529CB82BF00215B4C /* VotingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VotingViewController.swift; path = "idm362-rmk347/VotingViewController.swift"; sourceTree = "<group>"; };
 		CB9A395929CE83520093E738 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		CB9A395B29CEA7750093E738 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		CBEA51302979914C0024C769 /* idm362-rmk347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idm362-rmk347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA51332979914C0024C769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBEA51352979914C0024C769 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				CBEA513E2979914E0024C769 /* LaunchScreen.storyboard */,
 				CBEA51412979914E0024C769 /* Info.plist */,
 				CB64A44329C36E8700215B4C /* ListCreationView.swift */,
+				CB9A395B29CEA7750093E738 /* sounds */,
 			);
 			path = "idm362-rmk347";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				CBEA51402979914E0024C769 /* LaunchScreen.storyboard in Resources */,
 				CBEA513D2979914E0024C769 /* Assets.xcassets in Resources */,
+				CB9A395C29CEA7750093E738 /* sounds in Resources */,
 				CBEA513B2979914C0024C769 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
